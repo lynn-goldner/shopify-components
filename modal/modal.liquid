@@ -1,0 +1,58 @@
+{% capture modal_content %}
+    <h2 class="h3">Hear about a  event first! </h2>
+    <p>Plus - receive event announcements like special promotions or additional discounts that happen throughout the week</p>
+    <form id="notify-me" action="" method="POST">
+
+        <div class="input-group {% if form.errors %} input-group--error {% endif %}">
+            <label hidden for="{{ formID }}-email">Email</label>
+            <input type="email"
+            name="email"
+            id="{{ formID }}-email"
+            class="input-group__field {% if form.errors %} input--error {% endif %}"
+            value="{{ form.email }}"
+            placeholder="Email*"
+            aria-label="Email"
+            aria-required="true"
+            required
+            autocorrect="off"
+            autocapitalize="off"
+            {% if form.errors %}
+                aria-invalid="true"
+                aria-describedby="{{ formID }}-email-error"
+                data-form-status
+            {% endif %}>
+        </div>
+
+        <div class="coming-soon__form--half-width-container">
+            <div class="coming-soon__form--half-width">
+                <label hidden for="{{ formID }}-first_name">First Name</label>
+                <input type="text" 
+                id="{{ formID }}-first_name" 
+                placeholder="First Name*" 
+                value="" 
+                size="30" 
+                required />
+            </div>
+            <div class="coming-soon__form--half-width">
+                <label hidden for="{{ formID }}-last_name">Last Name</label>
+                <input type="text" 
+                id="{{ formID }}-last_name" 
+                placeholder="Last Name*" 
+                size="30" 
+                required />
+            </div>
+        </div>   
+
+        <button type="submit" class="btn btn-full">
+            Subscribe
+        </button>
+
+    </form>
+    <div>We use email and targeted online advertising to send you product and services updates, promotional offers and other marketing communications based on the information we collect about you, such as your email address, general location, and purchase and website browsing history.</div>
+{% endcapture %}
+
+{% include 'component-modal',
+modal_name: "default",
+modal_button: "Modal Default",
+modal_size: "default",
+modal_content: modal_content %}

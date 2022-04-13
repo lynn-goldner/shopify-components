@@ -1,0 +1,77 @@
+/*
+//  Accordions
+//  _____________________________________________
+*/
+
+.accordion {
+    border-top: 1px solid var(--color-border);
+    padding-bottom: 17px;
+}
+
+.accordion__item .icon {
+    width: 22px;
+    height: 22px;
+    align-self: end;
+    fill: var(--color-text);
+}
+
+.accordion__item .icon-less{
+    display: none;
+}
+
+.accordion__item.active {
+    transition: max-height 0.55s ease-in;
+}
+
+.accordion__item.active .icon-add {
+    display: none;
+}
+
+.accordion__item.active .icon-less {
+    display: block;
+}
+
+.accordion__item.active .accordion__content {
+    transition: max-height 0.35s ease-in;
+}
+
+.accordion__heading {
+    padding: 0px;
+    margin: 17px 0 15px;
+    width: 100%;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 22px;
+    background: var(--color-white);
+    color: var(--color-text);
+    border-radius: 2px;
+}
+
+.accordion__heading:focus,
+.accordion__heading:hover {
+    outline: none;
+}
+
+.accordion__heading:hover {
+    background: var(--color-white);
+    color: var(--color-text);
+}
+
+.accordion__heading:hover .icon {
+    fill: var(--color-text);
+}
+
+.accordion__heading:active {
+    text-decoration: none;
+}
+
+.accordion__content {
+    font-size: 14px;
+    overflow-y: hidden;
+    max-height: 0;
+    transition: max-height 0.35s ease-out;
+}

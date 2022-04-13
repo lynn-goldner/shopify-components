@@ -1,0 +1,12 @@
+<component-modal>
+    <button class="btn {{modal_btn_class}}" data-modal-open="{{modal_name | handleize}}" aria-label="Open modal">{{modal_button}}</button>
+
+    <div class="modal__container" role="dialog" aria-modal="true" data-modal data-modal-name="{{modal_name | handleize}}">
+        <div class="modal__content  modal__content--{{modal_size}}">
+            <button class="modal__close" data-modal-close aria-label="Close modal">{% render 'icon-close' %}</button>
+            <div>
+                {{modal_content}}
+            </div>
+        </div>
+    </div>
+</component-modal>
